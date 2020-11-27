@@ -1,0 +1,167 @@
+
+<div class="container">
+  <div class="heading">
+    <div class="body">
+      <h1 data-text="R Banking">R Banking</h1>
+    </div>
+  </div>
+  
+    
+    <div class="row details">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col">
+              <!-- <h2 style="font-family: 'Dancing Script', cursive;" class="text-center">
+                User Record
+              </h2> -->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div
+                class="table-responsive table mt-2"
+                role="grid"
+                aria-describedby="dataTable_info"
+              >
+                <table class="table my-0" id="dataTable-1">
+                  <tbody>
+                    <tr>
+                      <td style="background-color: lightgreen; ">Customer ID:</td>
+                      <td>{{ id }}</td>
+
+
+                    </tr>
+                    <tr>
+                      <td style="background-color: lightcoral;">Account Number:</td>
+                      <td>{{ acc_no }}</td>
+
+
+                    </tr>
+                    <tr>
+                      <td style="background-color: lightgreen;">Name:</td>
+                      <td>{{ Name }}</td>
+
+
+                    </tr>
+                    <tr>
+                      <td style="background-color: lightcoral;">Email:</td>
+                      <td>{{ Email }}</td>
+
+
+                    </tr>
+                    <tr>
+                      <td style="background-color: lightgreen;">Contact:</td>
+                      <td>{{ Contact}}</td>
+
+
+                    </tr>
+                    <tr>
+                      <td style="background-color: lightcoral;">Current Balance:</td>
+                      <td>{{ Balance }}</td>
+
+
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+
+
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr></tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+            <div class="">
+                <div class="container">
+                    <div class="row">
+                      <div class="col-md-8 mx-auto">
+                        <div class="card">
+                          <p-tabView >
+                            <p-tabPanel header="Add Balance">
+                              <div class="card-body">
+                                <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                        
+                                  <div class="form-group">
+                                    <label>Amount</label>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                  
+                                      formControlName="amount"
+                                      (input)="UserNameValue($event)"
+                                      
+                                    />
+                                    <span
+                                      class="text-danger"
+                                      *ngIf="
+                                        (registerFormControl.amount.touched || submitted) &&
+                                        registerFormControl.amount.errors?.required
+                                      "
+                                    >
+                                       Enter Amount
+                                    </span>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                    <button (click)="addClick()" class="btn btn-success">{{buttonName}}</button>
+                                  </div>
+                                  <div class="form-group">
+                                    <button  class="btn btn-error" (click)="signout()">Sign Out</button>
+                                  </div>
+                                </form>
+                              </div>
+                              
+                            </p-tabPanel>
+                            <p-tabPanel header="Withdraw">
+                              <div class="card-body">
+                                <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                        
+                                  <div class="form-group">
+                                    <label>Amount</label>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                  
+                                      formControlName="amount"
+                                      (input)="UserNameValue($event)"
+                                      
+                                    />
+                                    <span
+                                      class="text-danger"
+                                      *ngIf="
+                                        (registerFormControl.amount.touched || submitted) &&
+                                        registerFormControl.amount.errors?.required
+                                      "
+                                    >
+                                       Enter Amount
+                                    </span>
+                                  </div>
+                                  
+                                  <div class="form-group">
+                                    <button (click)="withdrawClick()" class="btn btn-success">Withdraw Amount</button>
+                                  </div>
+                                  <div class="form-group">
+                                    <button  class="btn btn-error" (click)="signout()">Sign Out</button>
+                                  </div>
+                                </form>
+                              </div>
+
+                            </p-tabPanel>
+                          </p-tabView>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
